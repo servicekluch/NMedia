@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         else -> "0"
     }
 
-    private fun Int.roundToThousandsWithOneDecimal(): Long =
-        (this / 100).toLong() / 10
+    private fun Int.roundToThousandsWithOneDecimal(): Double =
+        (this / 100).toDouble() / 10
 
 
 }
