@@ -17,7 +17,7 @@ class PostRepositoryInMemory: PostRepository {
     override val data = MutableLiveData<Post>(post)
 
     override fun like() {
-        val currentPost = requireNotNull(data.value)
+        val currentPost = checkNotNull(data.value)
         data.value = currentPost.copy(
             likeByMe = !currentPost.likeByMe,
             likeCount = if (currentPost.likeByMe) currentPost.likeCount.dec() else currentPost.likeCount.inc()
@@ -25,12 +25,12 @@ class PostRepositoryInMemory: PostRepository {
     }
 
     override fun share() {
-        val currentPost = requireNotNull(data.value)
+        val currentPost = checkNotNull(data.value)
         data.value = currentPost.copy(shareCount = currentPost.shareCount.inc())
     }
 
     override fun watches() {
-        val currentPost = requireNotNull(data.value)
+        val currentPost = checkNotNull(data.value)
         data.value = currentPost.copy(watchesCount = currentPost.watchesCount.inc())
     }
 }
