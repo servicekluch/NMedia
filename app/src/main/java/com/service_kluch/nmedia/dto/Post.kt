@@ -1,4 +1,4 @@
-package com.service_kluch.nmedia
+package com.service_kluch.nmedia.dto
 
 data class Post(
     val id: Long,

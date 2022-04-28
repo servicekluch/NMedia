@@ -1,18 +1,21 @@
-package com.service_kluch.nmedia
+package com.service_kluch.nmedia.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.service_kluch.nmedia.dto.Post
+import com.service_kluch.nmedia.repository.PostRepositoryInMemory
 
 class PostViewModel : ViewModel() {
     private val repository = PostRepositoryInMemory()
-    val data by repository::data
 
-    fun like() {
-        repository.like()
+    val liveData: LiveData<List<Post>>
+        get() = repository.listData
+
+    fun likeById(id: Long) {
+        repository.likeById(id)
     }
-    fun share() {
-        repository.share()
+    fun shareById(id: Long) {
+        repository.shareById(id)
     }
-    fun watches() {
-        repository.watches()
-    }
+
 }
