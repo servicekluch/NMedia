@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.service_kluch.nmedia.dto.Post
 
 class PostRepositoryInMemory: PostRepository {
+    private var nextId = 1L
 
     override val listData = MutableLiveData(
         List(10) { index ->
@@ -19,10 +20,8 @@ class PostRepositoryInMemory: PostRepository {
         }
     )
 
-    private val posts get() = checkNotNull(listData.value)
-
     override fun likeById(id: Long) {
-        listData.value = posts.map {
+        listData.value = listData.value?.map {
             if (it.id == id) it.copy(
                 likeByMe = !it.likeByMe,
                 likeCount = if (it.likeByMe) it.likeCount.dec() else it.likeCount.inc()
@@ -32,8 +31,32 @@ class PostRepositoryInMemory: PostRepository {
     }
 
     override fun shareById(id: Long) {
-        listData.value = posts.map {
+        listData.value = listData.value?.map {
             if (it.id == id) it.copy(shareCount = it.shareCount.inc()) else it
+        }
+    }
+
+    override fun removeById(id: Long) {
+        listData.value = listData.value?.filter { it.id != id }
+    }
+
+    override fun save(post: Post) {
+        if (post.id == 0L) {
+            listData.value = listOf(post.copy(id = nextId++, authorName = "Me", published = "Now")) +
+                    listData.value.orEmpty()
+            return
+        }
+        listData.value = listData.value?.map {
+            if (it.id == post.id) it.copy(
+                content = post.content
+            )
+            else it
+        }
+    }
+
+    override fun cancelEditing(post: Post) {
+        listData.value = listData.value?.map {
+            it.copy(content = it.content)
         }
     }
 }

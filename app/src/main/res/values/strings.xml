@@ -15,4 +15,8 @@
     <string name="views_counter" translatable="false">views_counter</string>
     <string name="like_button" translatable="false">like_button</string>
     <string name="like_counter" translatable="false">like_counter</string>
+    <string name="edit_text">Edit message</string>
+    <string name="menu_remove">Remove</string>
+    <string name="menu_edit">Edit</string>
+    <string name="empty_post">Empty post!</string>
 </resources>
