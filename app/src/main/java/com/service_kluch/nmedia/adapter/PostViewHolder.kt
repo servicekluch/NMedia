@@ -14,30 +14,30 @@ class PostViewHolder (
     fun bind (post: Post) {
         with(binding) {
             avatar.setImageResource(R.drawable.ic_launcher_foreground)
-            authorName.setText(post.authorName)
-            data.setText(post.published)
-            content.setText(post.content)
+            authorName.text = post.authorName
+            data.text = post.published
+            content.text = post.content
 
 
             likeImageButtonId.setImageResource(if (post.likeByMe) R.drawable.icon_like_liked else R.drawable.icon_like_not_liked)
-            likeCounterTextViewId.setText(post.likeCount.toFormattedString())
+            likeCounterTextViewId.text = post.likeCount.toFormattedString()
             likeImageButtonId.setOnClickListener {
                 onPostLiked(post)
             }
 
 
-            shareCounterTextViewId.setText(post.shareCount.toFormattedString())
+            shareCounterTextViewId.text = post.shareCount.toFormattedString()
             shareImageButtonId.setOnClickListener {
                 onPostShared(post)
             }
 
-            watchesCounterTextViewId.setText(post.watchesCount.toFormattedString())
+            watchesCounterTextViewId.text = post.watchesCount.toFormattedString()
 
         }
     }
 }
 
-private fun Int.toFormattedString() = when (this) {
+private fun Long.toFormattedString() = when (this) {
     in 0..999 -> this.toString()
     in 1_000..9_999 -> this.roundToThousandsWithOneDecimal().toString() + "K"
     in 10_000..999_999 -> (this / 1_000).toString() + "K"
@@ -48,5 +48,5 @@ private fun Int.toFormattedString() = when (this) {
     else -> "0"
 }
 
-private fun Int.roundToThousandsWithOneDecimal(): Double =
+private fun Long.roundToThousandsWithOneDecimal(): Double =
     (this / 100).toDouble() / 10
