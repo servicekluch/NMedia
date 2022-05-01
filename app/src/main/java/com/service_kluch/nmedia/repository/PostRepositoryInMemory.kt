@@ -33,7 +33,9 @@ class PostRepositoryInMemory: PostRepository {
 
     override fun shareById(id: Long) {
         listData.value = listData.value?.map {
-            if (it.id == id) it.copy(shareCount = it.shareCount.inc()) else it
+            if (it.id != id) it else it.copy(
+                shareCount = it.shareCount.inc()
+            )
         }
     }
 

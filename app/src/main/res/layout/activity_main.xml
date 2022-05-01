@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_post"
@@ -38,7 +39,8 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_save"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="LabelFor" />
 
     <ImageView
         android:id="@+id/button_save"
@@ -47,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_save_24"
-        />
+        android:contentDescription="@string/button_save" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/edit_group"
@@ -66,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="@id/button_save"
         app:layout_constraintStart_toStartOf="@id/button_save"
         app:srcCompat="@drawable/ic_baseline_close_24"
-        />
+        android:contentDescription="@string/button_cancel" />
 
     <ImageView
         android:id="@+id/button_edit"
@@ -78,7 +80,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/button_cancel"
         tools:ignore="RtlSymmetry"
-        />
+        android:contentDescription="@string/button_edit" />
     <TextView
         android:id="@+id/text_edit"
         android:layout_width="0dp"
