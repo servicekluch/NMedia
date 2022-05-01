@@ -22,4 +22,7 @@
 	<string name="save" translatable="false">Save</string>
     <string name="edit" translatable="false">Edit</string>
     <string name="clear" translatable="false">Clear</string>
+    <string name="button_save" translatable="false">button_save</string>
+    <string name="button_cancel" translatable="false">button_cancel</string>
+    <string name="button_edit" translatable="false">button_edit</string>
 </resources>
