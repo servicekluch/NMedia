@@ -15,6 +15,7 @@ class PostRepositoryInMemory: PostRepository {
                 published = "21 мая в 18:3$index",
                 likeByMe = false,
                 likeCount = 999,
+                shareCount = 0,
                 watchesCount = 1_999
             )
         }

@@ -1,82 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"
-    >
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_constraint"
+        android:id="@+id/list_post"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/top_barrier"
+        app:layout_constraintBottom_toTopOf="@id/top_Barrier"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".MainActivity"
+        tools:listitem="@layout/item_post" />
 
     <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/top_barrier"
+        android:id="@+id/top_Barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="content, save, cancel" />
+        app:constraint_referenced_ids="text_content, button_save, button_cancel" />
 
 
     <EditText
-        android:id="@+id/content"
+        android:id="@+id/text_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/save"
+        app:layout_constraintEnd_toStartOf="@id/button_save"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/save"
+        android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_save_foreground" />
+        app:srcCompat="@drawable/ic_baseline_save_24"
+        />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/edit_group"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="invisible"
-        app:constraint_referenced_ids="cancel, edit_images, edit_text, editable_text" />
+        app:constraint_referenced_ids="button_cancel, button_edit, text_edit, editable_text"
+        tools:ignore="NotSibling" />
 
     <ImageView
-        android:id="@+id/cancel"
+        android:id="@+id/button_cancel"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:paddingBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/content"
-        app:layout_constraintEnd_toEndOf="@id/save"
-        app:layout_constraintStart_toStartOf="@id/save"
-        app:srcCompat="@drawable/ic_baseline_close_24" />
+        app:layout_constraintBottom_toTopOf="@id/text_content"
+        app:layout_constraintEnd_toEndOf="@id/button_save"
+        app:layout_constraintStart_toStartOf="@id/button_save"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        />
 
     <ImageView
-        android:id="@+id/edit_images"
+        android:id="@+id/button_edit"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:paddingStart="5dp"
         app:srcCompat = "@drawable/ic_edit_foreground"
-        app:layout_constraintBottom_toBottomOf="@id/cancel"
+        app:layout_constraintBottom_toBottomOf="@id/button_cancel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/cancel" />
+        app:layout_constraintTop_toTopOf="@id/button_cancel"
+        tools:ignore="RtlSymmetry"
+        />
     <TextView
-        android:id="@+id/edit_text"
+        android:id="@+id/text_edit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -84,12 +88,12 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textSize="13sp"
-        android:text="@string/edit_text"
-        android:textColor="#19466E"
         app:layout_constraintBottom_toTopOf="@id/editable_text"
-        app:layout_constraintEnd_toStartOf="@id/cancel"
-        app:layout_constraintStart_toEndOf="@+id/edit_images"
-        app:layout_constraintTop_toTopOf="@+id/edit_images" />
+        app:layout_constraintEnd_toStartOf="@id/button_cancel"
+        app:layout_constraintStart_toEndOf="@+id/button_edit"
+        app:layout_constraintTop_toTopOf="@+id/button_edit"
+        android:text="@string/edit_text"
+        android:textColor="#19466E"/>
 
     <TextView
         android:id="@+id/editable_text"
@@ -99,9 +103,9 @@
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@id/edit_images"
-        app:layout_constraintEnd_toStartOf="@id/cancel"
-        app:layout_constraintStart_toEndOf="@+id/edit_images"
-        app:layout_constraintTop_toBottomOf="@id/edit_text" />
-</FrameLayout>
+        app:layout_constraintBottom_toBottomOf="@id/button_edit"
+        app:layout_constraintEnd_toStartOf="@id/button_cancel"
+        app:layout_constraintStart_toEndOf="@+id/button_edit"
+        app:layout_constraintTop_toBottomOf="@id/text_edit"
+        android:textSize="13sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

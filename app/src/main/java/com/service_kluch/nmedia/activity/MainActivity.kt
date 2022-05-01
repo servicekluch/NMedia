@@ -18,61 +18,61 @@ import com.service_kluch.nmedia.util.AndroidUtils.hideKeyboard
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val myBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(myBinding.recyclerViewConstraint)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val myViewModel: PostViewModel by viewModels()
+        val viewModel: PostViewModel by viewModels()
 
         val adapter = PostAdapter(
             object: OnInteractionListener {
                 override fun onEditClicked(post: Post) {
-                    myBinding.editGroup.visibility = Group.VISIBLE
-                    myViewModel.edit(post)
+                    binding.editGroup.visibility = Group.VISIBLE
+                    viewModel.edit(post)
                 }
 
                 override fun onRemoveClicked(post: Post) {
-                    myViewModel.removeById(post.id)
+                    viewModel.removeById(post.id)
                 }
 
                 override fun onLikeClicked(post: Post) {
-                    myViewModel.likeById(post.id)
+                    viewModel.likeById(post.id)
                 }
 
                 override fun onShareClicked(post: Post) {
-                    myViewModel.shareById(post.id)
+                    viewModel.shareById(post.id)
                 }
 
             }
         )
 
-        myBinding.recyclerViewConstraint.adapter = adapter
-        myBinding.recyclerViewConstraint.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        myViewModel.liveData.observe(this, adapter::submitList)
-        myViewModel.editedPost.observe(this) {
-            myBinding.content.setText(it.content)
-            myBinding.editableText.setText(it.content)
+        binding.listPost.adapter = adapter
+        binding.listPost.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        viewModel.liveData.observe(this, adapter::submitList)
+        viewModel.editedPost.observe(this) {
+            binding.textContent.setText(it.content)
+            binding.editableText.setText(it.content)
             if (it.content.isNotBlank()) {
-                myBinding.content.requestFocus()
+                binding.textContent.requestFocus()
             }
         }
 
-        myBinding.save.setOnClickListener{
-            val text = myBinding.content.text?.toString().orEmpty()
+        binding.buttonSave.setOnClickListener{
+            val text = binding.textContent.text?.toString().orEmpty()
             if (text.isBlank()) {
                 Toast.makeText(this, getString(R.string.empty_post), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            myViewModel.changeContent(text)
-            myViewModel.save()
-            myBinding.content.clearFocus()
+            viewModel.changeContent(text)
+            viewModel.save()
+            binding.textContent.clearFocus()
             it.hideKeyboard()
-            myBinding.editGroup.visibility = Group.GONE
+            binding.editGroup.visibility = Group.GONE
         }
-        myBinding.cancel.setOnClickListener{
-            myViewModel.cancelEditing()
-            myBinding.content.clearFocus()
+        binding.buttonCancel.setOnClickListener{
+            viewModel.cancelEditing()
+            binding.textContent.clearFocus()
             it.hideKeyboard()
-            myBinding.editGroup.visibility = Group.GONE
+            binding.editGroup.visibility = Group.GONE
         }
     }
 }
