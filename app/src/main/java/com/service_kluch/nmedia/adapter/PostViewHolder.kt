@@ -25,7 +25,6 @@ class PostViewHolder(
                 onInteractionListener.onLikeClicked(post)
             }
 
-            onInteractionListener.onShareClicked(post)
             shareCounterTextViewId.text = post.shareCount.toFormattedString()
             shareImageButtonId.setOnClickListener {
                 onInteractionListener.onShareClicked(post)
