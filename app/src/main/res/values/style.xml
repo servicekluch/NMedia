@@ -1,0 +1,37 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.AppTheme.LikeCheckBox"
+        parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="icon">@color/like_checkbox</item>
+        <item name="android:minWidth">@dimen/dp_40</item>
+        <item name="android:minHeight">@dimen/dp_40</item>
+    </style>
+
+    <style name="Widget.AppTheme.ShareButton"
+        parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="icon">@color/share</item>
+        <item name="android:minWidth">@dimen/dp_40</item>
+        <item name="android:minHeight">@dimen/dp_40</item>
+    </style>
+
+    <style name="Widget.AppTheme.MenuButton"
+        parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="icon">@color/share</item>
+        <item name="android:minWidth">@dimen/dp_8</item>
+        <item name="android:minHeight">@dimen/dp_40</item>
+    </style>
+
+    <style name="Widget.AppTheme.WatchesButton"
+        parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="icon">@color/share</item>
+        <item name="android:minWidth">@dimen/dp_8</item>
+        <item name="android:minHeight">@dimen/dp_40</item>
+    </style>
+
+
+</resources>
