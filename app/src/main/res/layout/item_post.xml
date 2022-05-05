@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,9 +13,8 @@
         android:layout_marginBottom="@dimen/dp_16"
         android:contentDescription="@string/avatar"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/authorName"
@@ -24,43 +22,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_8"
+        android:contentDescription="@string/post_title"
         android:ellipsize="end"
         android:singleLine="true"
-        android:contentDescription="@string/post_title"
         android:text="@string/post_name"
         app:layout_constraintBottom_toTopOf="@+id/data"
         app:layout_constraintEnd_toStartOf="@id/menu"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/avatar"
         app:layout_constraintTop_toTopOf="@id/avatar"
-        app:layout_constraintVertical_chainStyle="packed"
-        />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/data"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/post_date"
         android:ellipsize="end"
         android:singleLine="true"
-        android:contentDescription="@string/post_date"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
         app:layout_constraintEnd_toEndOf="@id/authorName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/authorName"
-        app:layout_constraintTop_toBottomOf="@id/authorName"
-        />
+        app:layout_constraintTop_toBottomOf="@id/authorName" />
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_12"
-        android:background="@android:color/transparent"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
         android:contentDescription="@string/post_menu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/authorName"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_more_vert_24"
-        />
+        style="@style/Widget.AppTheme.MenuButton"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
@@ -68,7 +66,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/post_barrier"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="avatar, authorName, data, menu"/>
+        app:constraint_referenced_ids="avatar, authorName, data, menu" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/content"
@@ -80,43 +78,42 @@
         android:text="@string/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier"/>
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/like_image_button_id"
+        style="@style/Widget.AppTheme.LikeCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_8"
+        android:checkable="true"
         android:contentDescription="@string/like_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/content"
         app:icon="@drawable/icon_like"
-        style="@style/Widget.AppTheme.LikeCheckBox"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/share_image_button_id"
+        style="@style/Widget.AppTheme.ShareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_12"
         android:contentDescription="@string/like_share_button"
-        app:layout_constraintTop_toTopOf="@+id/like_image_button_id"
+        app:icon="@drawable/icon_share"
         app:layout_constraintBottom_toBottomOf="@+id/like_image_button_id"
         app:layout_constraintStart_toEndOf="@+id/like_image_button_id"
-        app:icon="@drawable/icon_share"
-        style="@style/Widget.AppTheme.ShareButton"
-        />
+        app:layout_constraintTop_toTopOf="@+id/like_image_button_id" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/watches_image_view_id"
+        style="@style/Widget.AppTheme.WatchesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_8"
         android:contentDescription="@string/views"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/like_image_button_id"
-        app:layout_constraintBottom_toBottomOf="@id/like_image_button_id"
         app:icon="@drawable/icon_watches"
-        style="@style/Widget.AppTheme.WatchesButton"/>
+        app:layout_constraintBottom_toBottomOf="@id/like_image_button_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/like_image_button_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
