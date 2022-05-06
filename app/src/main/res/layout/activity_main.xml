@@ -8,15 +8,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_post"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
         android:clipToPadding="false"
         android:orientation="vertical"
-        android:padding="8dp"
+        android:padding="@dimen/dp_0"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/top_Barrier"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -33,7 +33,7 @@
 
     <EditText
         android:id="@+id/text_content"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
@@ -46,68 +46,69 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/button_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_save_24"
-        android:contentDescription="@string/button_save" />
+        app:srcCompat="@drawable/ic_baseline_save" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/edit_group"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
         android:visibility="invisible"
         app:constraint_referenced_ids="button_cancel, button_edit, text_edit, editable_text"
         tools:ignore="NotSibling" />
 
     <ImageView
         android:id="@+id/button_cancel"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:paddingBottom="5dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:contentDescription="@string/button_cancel"
+        android:paddingBottom="@dimen/dp_8"
         app:layout_constraintBottom_toTopOf="@id/text_content"
         app:layout_constraintEnd_toEndOf="@id/button_save"
         app:layout_constraintStart_toStartOf="@id/button_save"
-        app:srcCompat="@drawable/ic_baseline_close_24"
-        android:contentDescription="@string/button_cancel" />
+        app:srcCompat="@drawable/ic_baseline_close" />
 
     <ImageView
         android:id="@+id/button_edit"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:paddingStart="5dp"
-        app:srcCompat = "@drawable/ic_edit_foreground"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:contentDescription="@string/button_edit"
+        android:paddingStart="@dimen/dp_8"
         app:layout_constraintBottom_toBottomOf="@id/button_cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/button_cancel"
-        tools:ignore="RtlSymmetry"
-        android:contentDescription="@string/button_edit" />
+        app:srcCompat="@drawable/ic_baseline_edit"
+        tools:ignore="RtlSymmetry" />
+
     <TextView
         android:id="@+id/text_edit"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textSize="13sp"
+        android:text="@string/edit_text"
+        android:textColor="#19466E"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/editable_text"
         app:layout_constraintEnd_toStartOf="@id/button_cancel"
         app:layout_constraintStart_toEndOf="@+id/button_edit"
-        app:layout_constraintTop_toTopOf="@+id/button_edit"
-        android:text="@string/edit_text"
-        android:textColor="#19466E"/>
+        app:layout_constraintTop_toTopOf="@+id/button_edit" />
 
     <TextView
         android:id="@+id/editable_text"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
         android:ellipsize="end"
         android:maxLines="1"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/button_edit"
         app:layout_constraintEnd_toStartOf="@id/button_cancel"
         app:layout_constraintStart_toEndOf="@+id/button_edit"
-        app:layout_constraintTop_toBottomOf="@id/text_edit"
-        android:textSize="13sp" />
+        app:layout_constraintTop_toBottomOf="@id/text_edit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

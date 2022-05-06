@@ -10,17 +10,36 @@
         <entry key="..\:/Android/NMedia/app/src/main/res/layout/item_post.xml" value="0.75" />
         <entry key="..\:/Android/NMedia/app/src/main/res/menu/options_post.xml" value="0.15416666666666667" />
         <entry key="..\:/Android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1555" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_close.xml" value="0.1275" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_edit.xml" value="0.1005" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2775" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_save.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_save_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_vert_menu.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_edit_foreground.xml" value="0.2775" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2775" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_netology.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/drawable/ic_save_foreground.xml" value="0.2775" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_like.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_like_liked.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_like_not_liked.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_share.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_watches.xml" value="0.2775" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/android/NMedia/app/src/main/res/layout/item_post.xml" value="0.21739130434782608" />
+        <entry key="..\:/android/NMedia/app/src/main/res/menu/options_post.xml" value="0.27291666666666664" />
+        <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_edit.xml" value="0.116" />
+        <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_edit_round.xml" value="0.1" />
         <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2775" />
+        <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_save.xml" value="0.1" />
+        <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_save_round.xml" value="0.1" />
       </map>
     </option>
   </component>

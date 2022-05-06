@@ -13,24 +13,23 @@ class PostViewHolder(
 
     fun bind (post: Post) {
         with(binding) {
-            avatar.setImageResource(R.drawable.ic_launcher_foreground)
+            avatar.setImageResource(R.drawable.ic_launcher_netology)
             authorName.text = post.authorName
             data.text = post.published
             content.text = post.content
 
+            likeImageButtonId.isChecked = post.likeByMe
+            likeImageButtonId.text = post.likeCount.toFormattedString()
+            shareImageButtonId.text = post.shareCount.toFormattedString()
+            watchesImageViewId.text = post.watchesCount.toFormattedString()
 
-            likeImageButtonId.setImageResource(if (post.likeByMe) R.drawable.icon_like_liked else R.drawable.icon_like_not_liked)
-            likeCounterTextViewId.text = post.likeCount.toFormattedString()
             likeImageButtonId.setOnClickListener {
                 onInteractionListener.onLikeClicked(post)
             }
 
-            shareCounterTextViewId.text = post.shareCount.toFormattedString()
             shareImageButtonId.setOnClickListener {
                 onInteractionListener.onShareClicked(post)
             }
-
-            watchesCounterTextViewId.text = post.watchesCount.toFormattedString()
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
