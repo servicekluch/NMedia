@@ -7,19 +7,20 @@ import androidx.recyclerview.widget.ListAdapter
 import com.service_kluch.nmedia.dto.Post
 import com.service_kluch.nmedia.databinding.ItemPostBinding
 
-class PostAdapter (
-    private val onPostLiked: (Post) -> Unit,
-    private val onPostShared: (Post) -> Unit
+class PostAdapter(
+    private val onInteractionListener: OnInteractionListener
 ) : ListAdapter<Post, PostViewHolder>(PostDiffCallback()) {
 
-    var posts: List<Post> = emptyList()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder =
+        PostViewHolder(
+            ItemPostBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            ),
+            onInteractionListener
+        )
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val itemPostBinding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewHolder(binding = itemPostBinding,
-            onPostLiked = onPostLiked,
-            onPostShared = onPostShared)
-    }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(getItem(position))
