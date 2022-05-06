@@ -4,15 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp"
+   >
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/retreat_48_dp"
+        android:layout_height="@dimen/retreat_48_dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/avatar"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <TextView
+        android:id="@+id/authorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:contentDescription="@string/post_title"
+        android:text="@string/post_name"
+        app:layout_constraintBottom_toTopOf="@+id/data"
+        app:layout_constraintEnd_toStartOf="@id/menu"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintVertical_chainStyle="packed"
+        />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:contentDescription="@string/post_date"
+        android:text="21 мая в 18:36"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintEnd_toEndOf="@id/authorName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/authorName"
+        app:layout_constraintTop_toBottomOf="@id/authorName"
+        />
+
+    <ImageButton
+        android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nmedia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/post_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+         />
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/post_barrier"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="avatar, authorName, data, menu"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autoLink="web"
+        android:contentDescription="@string/post_content"
+        android:text="@string/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/likes_check_box_id"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/retreat_24_dp"
+        android:layout_marginStart="16dp"
+        android:button="@drawable/icon_like"
+        android:contentDescription="@string/like_checkbox"
+        android:paddingStart="5dp"
+        android:text="501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        tools:ignore="RtlSymmetry"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/share_image_button_id"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/retreat_24_dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icon_share"
+        android:contentDescription="@string/like_share_button"
+        app:layout_constraintStart_toEndOf="@id/likes_check_box_id"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/share_counter_text_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"
+        android:contentDescription="@string/like_share_counter"
+        android:text="1501"
+        app:layout_constraintStart_toEndOf="@id/share_image_button_id"
+        app:layout_constraintBaseline_toBaselineOf="@id/likes_check_box_id"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/watches_image_view_id"
+        android:layout_width="@dimen/retreat_24_dp"
+        android:layout_height="@dimen/retreat_24_dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/icon_watches"
+        android:contentDescription="@string/views"
+        app:layout_constraintEnd_toStartOf="@id/watches_counter_text_view_id"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/watches_counter_text_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="@string/views_counter"
+        android:text="2501"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/likes_check_box_id"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

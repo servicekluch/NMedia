@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="retreat_24_dp">24dp</dimen>
+    <dimen name="retreat_48_dp">48dp</dimen>
+</resources>
