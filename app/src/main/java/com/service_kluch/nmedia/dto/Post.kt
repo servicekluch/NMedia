@@ -1,4 +1,4 @@
-package com.service_kluch.nmedia
+package com.service_kluch.nmedia.dto
 
 data class Post(
     val id: Long,
@@ -6,7 +6,7 @@ data class Post(
     val content: String,
     val published: String,
     val likeByMe: Boolean = false,
-    val likeCount: Int = 0,
-    val shareCount: Int = 0,
-    val watchesCount: Int = 0
+    val likeCount: Long = 0,
+    val shareCount: Long = 0,
+    val watchesCount: Long = 0
 )
