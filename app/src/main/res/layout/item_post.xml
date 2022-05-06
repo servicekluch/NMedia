@@ -12,7 +12,7 @@
         android:layout_height="@dimen/dp_48"
         android:layout_marginBottom="@dimen/dp_16"
         android:contentDescription="@string/avatar"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/ic_launcher_netology"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,10 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/post_menu"
-        app:layout_constraintBottom_toBottomOf="@+id/avatar"
+        android:layout_marginBottom="16dp"
+        app:icon="@drawable/ic_baseline_vert_menu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/avatar"
-        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintTop_toTopOf="parent"
         style="@style/Widget.AppTheme.MenuButton"/>
 
     <androidx.constraintlayout.widget.Barrier

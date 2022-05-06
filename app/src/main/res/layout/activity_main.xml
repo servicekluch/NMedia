@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_save_24"
+        app:srcCompat="@drawable/ic_baseline_save"
         android:contentDescription="@string/button_save" />
 
     <androidx.constraintlayout.widget.Group
@@ -67,7 +67,7 @@
         app:layout_constraintBottom_toTopOf="@id/text_content"
         app:layout_constraintEnd_toEndOf="@id/button_save"
         app:layout_constraintStart_toStartOf="@id/button_save"
-        app:srcCompat="@drawable/ic_baseline_close_24"
+        app:srcCompat="@drawable/ic_baseline_close"
         android:contentDescription="@string/button_cancel" />
 
     <ImageView
@@ -75,7 +75,7 @@
         android:layout_width="@dimen/dp_36"
         android:layout_height="@dimen/dp_36"
         android:paddingStart="@dimen/dp_8"
-        app:srcCompat = "@drawable/ic_edit_foreground"
+        app:srcCompat = "@drawable/ic_baseline_edit"
         app:layout_constraintBottom_toBottomOf="@id/button_cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/button_cancel"

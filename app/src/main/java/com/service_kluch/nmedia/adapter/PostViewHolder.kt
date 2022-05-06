@@ -13,7 +13,7 @@ class PostViewHolder(
 
     fun bind (post: Post) {
         with(binding) {
-            avatar.setImageResource(R.drawable.ic_launcher_foreground)
+            avatar.setImageResource(R.drawable.ic_launcher_netology)
             authorName.text = post.authorName
             data.text = post.published
             content.text = post.content
