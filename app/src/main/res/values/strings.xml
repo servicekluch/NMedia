@@ -13,4 +13,6 @@
     <string name="like_share_counter" translatable="false">like_share_counter</string>
     <string name="views" translatable="false">views</string>
     <string name="views_counter" translatable="false">views_counter</string>
+    <string name="like_button" translatable="false">like_button</string>
+    <string name="like_counter" translatable="false">like_counter</string>
 </resources>
