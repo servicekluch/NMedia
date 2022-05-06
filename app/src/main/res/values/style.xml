@@ -7,7 +7,8 @@
 
     <style name="Widget.AppTheme.LikeCheckBox"
         parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/like_checkbox</item>
+        <item name="icon">@drawable/icon_like</item>
+        <item name="iconTint">@color/like_checkbox_tint</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:minWidth">@dimen/dp_24</item>
         <item name="android:minHeight">@dimen/dp_24</item>
@@ -15,7 +16,8 @@
 
     <style name="Widget.AppTheme.ShareButton"
         parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/share</item>
+        <item name="icon">@drawable/icon_share</item>
+        <item name="iconTint">@color/black_500</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:minWidth">@dimen/dp_24</item>
         <item name="android:minHeight">@dimen/dp_24</item>
@@ -23,7 +25,8 @@
 
     <style name="Widget.AppTheme.MenuButton"
         parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/share</item>
+        <item name="icon">@drawable/ic_baseline_vert_menu</item>
+        <item name="iconTint">@color/black_500</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:minWidth">@dimen/dp_24</item>
         <item name="android:minHeight">@dimen/dp_24</item>
@@ -31,7 +34,8 @@
 
     <style name="Widget.AppTheme.WatchesButton"
         parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/share</item>
+        <item name="icon">@drawable/icon_watches</item>
+        <item name="iconTint">@color/black_500</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:minWidth">@dimen/dp_24</item>
         <item name="android:minHeight">@dimen/dp_24</item>
