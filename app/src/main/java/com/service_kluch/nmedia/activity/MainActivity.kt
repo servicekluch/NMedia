@@ -17,8 +17,6 @@ import com.service_kluch.nmedia.dto.Post
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: PostViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
