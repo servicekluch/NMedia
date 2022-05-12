@@ -1,12 +1,13 @@
 package com.service_kluch.nmedia.repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.service_kluch.nmedia.dto.Post
 
 class PostRepositoryInMemory: PostRepository {
     private var nextId = 1L
 
-    override val listData = MutableLiveData(
+    private val listData = MutableLiveData(
         List(10) { index ->
             Post(
                 id = index + 1L,
@@ -21,6 +22,8 @@ class PostRepositoryInMemory: PostRepository {
             )
         }
     )
+
+    override fun getAll(): LiveData<List<Post>> = listData
 
     override fun likeById(id: Long) {
         listData.value = listData.value?.map {

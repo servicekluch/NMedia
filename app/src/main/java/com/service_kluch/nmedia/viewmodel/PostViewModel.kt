@@ -1,10 +1,11 @@
 package com.service_kluch.nmedia.viewmodel
 
-import androidx.lifecycle.LiveData
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.service_kluch.nmedia.dto.Post
-import com.service_kluch.nmedia.repository.PostRepositoryInMemory
+import com.service_kluch.nmedia.repository.PostRepository
+import com.service_kluch.nmedia.repository.PostRepositoryFileImpl
 
 private val empty = Post(
     id = 0,
@@ -16,12 +17,13 @@ private val empty = Post(
     watchesCount = 0
 )
 
-class PostViewModel : ViewModel() {
-    private val repository = PostRepositoryInMemory()
-    val editedPost = MutableLiveData(empty)
+class PostViewModel(application: Application) : AndroidViewModel(application) {
 
-    val liveData: LiveData<List<Post>>
-        get() = repository.listData
+    private val repository: PostRepository = PostRepositoryFileImpl(application)
+    val liveData = repository.getAll()
+
+    private val editedPost = MutableLiveData(empty)
+
 
     fun likeById(id: Long) {
         repository.likeById(id)
@@ -50,13 +52,6 @@ class PostViewModel : ViewModel() {
 
     fun edit (post: Post) {
         editedPost.value = post
-    }
-
-    fun cancelEditing() {
-        editedPost.value?.let {
-            repository.cancelEditing(it)
-        }
-        editedPost.value = empty
     }
 
     fun getUri(post: Post): Boolean {

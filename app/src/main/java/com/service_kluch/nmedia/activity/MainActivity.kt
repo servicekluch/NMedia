@@ -16,23 +16,11 @@ import com.service_kluch.nmedia.databinding.ActivityMainBinding
 import com.service_kluch.nmedia.dto.Post
 
 class MainActivity : AppCompatActivity() {
-
-    private val viewModel: PostViewModel by viewModels()
-
+    val viewModel: PostViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val viewModel: PostViewModel by viewModels()
-        val newPostLauncher  = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode != Activity.RESULT_OK) {
-                return@registerForActivityResult
-            }
-            result.data?.getStringExtra(Intent.EXTRA_TEXT)?.let {
-                viewModel.changeContent(it)
-                viewModel.save()
-            }
-        }
         val adapter = PostAdapter(
             object : OnInteractionListener {
                 override fun onEditClicked(post: Post) {
@@ -80,10 +68,20 @@ class MainActivity : AppCompatActivity() {
                 DividerItemDecoration.VERTICAL
             )
         )
-        viewModel.liveData.observe(this, adapter::submitList)
+
+        this.viewModel.liveData.observe(this, adapter::submitList)
         binding.fab.setOnClickListener {
             val intent = Intent(this, NewPostActivity::class.java)
             newPostLauncher.launch(intent)
+        }
+    }
+    val newPostLauncher  = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode != Activity.RESULT_OK) {
+            return@registerForActivityResult
+        }
+        result.data?.getStringExtra(Intent.EXTRA_TEXT)?.let {
+            viewModel.changeContent(it)
+            viewModel.save()
         }
     }
 }
