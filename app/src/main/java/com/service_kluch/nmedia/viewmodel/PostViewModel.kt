@@ -58,4 +58,8 @@ class PostViewModel : ViewModel() {
         }
         editedPost.value = empty
     }
+
+    fun getUri(post: Post): Boolean {
+        return repository.isVideo(post)
+    }
 }

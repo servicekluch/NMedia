@@ -16,7 +16,8 @@ class PostRepositoryInMemory: PostRepository {
                 likeByMe = false,
                 likeCount = 999,
                 shareCount = 0,
-                watchesCount = 1_999
+                watchesCount = 1_999,
+                video = "https://www.youtube.com/watch?v=WhWc3b3KhnY"
             )
         }
     )
@@ -61,5 +62,9 @@ class PostRepositoryInMemory: PostRepository {
         listData.value = listData.value?.map {
             it.copy(content = it.content)
         }
+    }
+
+    override fun isVideo(post: Post): Boolean {
+        return (!post.video.isNullOrEmpty())
     }
 }
