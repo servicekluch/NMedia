@@ -8,12 +8,12 @@ import com.google.gson.reflect.TypeToken
 import com.service_kluch.nmedia.dto.Post
 
 class PostRepositoryFileImpl(
-    private val context: Context,
+    private val context: Context
 ) : PostRepository {
     private val gson = Gson()
     private val type = TypeToken.getParameterized(List::class.java, Post::class.java).type
     private val filename = "posts.json"
-    private var ids = 0L
+    private var ids = 1L
     private var posts = emptyList<Post>()
     private val data = MutableLiveData(posts)
 
@@ -22,7 +22,6 @@ class PostRepositoryFileImpl(
         if (file.exists()) {
             context.openFileInput(filename).bufferedReader().use {
                 posts = gson.fromJson(it, type)
-                ids = posts.first().id
                 data.value = posts
             }
         } else {

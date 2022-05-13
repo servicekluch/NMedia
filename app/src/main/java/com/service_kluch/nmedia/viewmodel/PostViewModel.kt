@@ -17,8 +17,8 @@ private val empty = Post(
     watchesCount = 0
 )
 
-class PostViewModel(application: Application) : AndroidViewModel(application) {
 
+class PostViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: PostRepository = PostRepositoryFileImpl(application)
     val liveData = repository.getAll()
 
