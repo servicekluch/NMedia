@@ -25,4 +25,10 @@
     <string name="button_save" translatable="false">button_save</string>
     <string name="button_cancel" translatable="false">button_cancel</string>
     <string name="button_edit" translatable="false">button_edit</string>
+    <string name="chooser_share_post">Share post</string>
+    <string name="error_empty_content">Content can\'t be empty</string>
+    <string name="video" translatable="false">video</string>
+    <string name="button_play" translatable="false">button_play</string>
+    <string name="button_check" translatable="false">button_check</string>
+    <string name="fab" translatable="false">fab</string>
 </resources>

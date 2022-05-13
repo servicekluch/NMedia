@@ -1,6 +1,7 @@
 package com.service_kluch.nmedia.adapter
 
 import android.widget.PopupMenu
+import androidx.constraintlayout.widget.Group
 import androidx.recyclerview.widget.RecyclerView
 import com.service_kluch.nmedia.dto.Post
 import com.service_kluch.nmedia.R
@@ -12,6 +13,9 @@ class PostViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind (post: Post) {
+        if (!post.video.isNullOrEmpty()){
+            binding.videoGroup.visibility = Group.VISIBLE
+        }
         with(binding) {
             avatar.setImageResource(R.drawable.ic_launcher_netology)
             authorName.text = post.authorName
@@ -29,6 +33,9 @@ class PostViewHolder(
 
             shareImageButtonId.setOnClickListener {
                 onInteractionListener.onShareClicked(post)
+            }
+            video.setOnClickListener{
+                onInteractionListener.onVideoClicked(post)
             }
 
             menu.setOnClickListener {
@@ -50,7 +57,6 @@ class PostViewHolder(
                     }
                 }.show()
             }
-
         }
     }
 }

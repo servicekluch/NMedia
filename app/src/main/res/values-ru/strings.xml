@@ -6,4 +6,6 @@
     <string name="menu_remove">удалить</string>
     <string name="menu_edit">изменить</string>
     <string name="empty_post">пустой пост!</string>
+    <string name="chooser_share_post">Поделиться</string>
+    <string name="error_empty_content">Контент не может быть пустым</string>
 </resources>
