@@ -47,12 +47,10 @@
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_like_not_liked.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_share.xml" value="0.26" />
         <entry key="..\:/android/NMedia/app/src/main/res/drawable/icon_watches.xml" value="0.2775" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/activity_intent_handler_del.xml" value="0.12552083333333333" />
         <entry key="..\:/android/NMedia/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/activity_new_post_del.xml" value="0.12552083333333333" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/app_activity.xml" value="0.12447916666666667" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/fragment_feed.xml" value="0.12447916666666667" />
-        <entry key="..\:/android/NMedia/app/src/main/res/layout/fragment_new_post.xml" value="0.10213675213675213" />
+        <entry key="..\:/android/NMedia/app/src/main/res/layout/fragment_feed.xml" value="0.1272644927536232" />
+        <entry key="..\:/android/NMedia/app/src/main/res/layout/fragment_new_post.xml" value="0.1272644927536232" />
+        <entry key="..\:/android/NMedia/app/src/main/res/layout/fragment_one_post.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NMedia/app/src/main/res/layout/item_post.xml" value="0.21739130434782608" />
         <entry key="..\:/android/NMedia/app/src/main/res/menu/options_post.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NMedia/app/src/main/res/mipmap-anydpi-v26/ic_edit.xml" value="0.116" />

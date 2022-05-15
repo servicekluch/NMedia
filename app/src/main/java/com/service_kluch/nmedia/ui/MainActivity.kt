@@ -24,8 +24,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 R.id.action_feedFragment_to_newPostFragment,
                 Bundle().apply {
                     textArg = text
-                }
-            )
+                })
         }
     }
 }
