@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.service_kluch.nmedia.R
-import com.service_kluch.nmedia.ui.NewPostFragment.Companion.textArg
+import com.service_kluch.nmedia.util.CompanionArg.Companion.textArg
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class AppActivity : AppCompatActivity(R.layout.activity_app) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

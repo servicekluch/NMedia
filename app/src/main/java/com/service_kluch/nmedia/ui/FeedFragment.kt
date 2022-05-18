@@ -14,7 +14,8 @@ import com.service_kluch.nmedia.adapter.OnInteractionListener
 import com.service_kluch.nmedia.adapter.PostAdapter
 import com.service_kluch.nmedia.databinding.FragmentFeedBinding
 import com.service_kluch.nmedia.dto.Post
-import com.service_kluch.nmedia.ui.NewPostFragment.Companion.textArg
+import com.service_kluch.nmedia.util.CompanionArg.Companion.longArg
+import com.service_kluch.nmedia.util.CompanionArg.Companion.textArg
 import com.service_kluch.nmedia.viewmodel.PostViewModel
 
 
@@ -70,6 +71,12 @@ class FeedFragment : Fragment() {
                     if (viewModel.getUri(post)) {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.video)))
                     }
+                }
+                override fun onPostClicked(post: Post) {
+                    findNavController().navigate(R.id.action_feedFragment_to_postFragment,
+                        Bundle().apply {
+                            longArg = post.id
+                        })
                 }
             }
         )
