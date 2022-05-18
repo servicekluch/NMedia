@@ -82,13 +82,20 @@ class FeedFragment : Fragment() {
         )
 
         binding.list.adapter = adapter
-        viewModel.liveData.observe(viewLifecycleOwner, adapter::submitList)
 
+        viewModel.liveData.observe(viewLifecycleOwner) { posts ->
+            val newPost = adapter.itemCount < posts.size
+            adapter.submitList(posts) {
+                if (newPost) {
+                    binding.list.smoothScrollToPosition(0)
+                }
+            }
+        }
 
         binding.fab.setOnClickListener {
+
             findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
         }
         return binding.root
-
     }
 }

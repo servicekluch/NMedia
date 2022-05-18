@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.service_kluch.nmedia.databinding.FragmentNewPostBinding
-import com.service_kluch.nmedia.util.AndroidUtils.hideKeyboard
 import com.service_kluch.nmedia.util.CompanionArg.Companion.textArg
 import com.service_kluch.nmedia.viewmodel.PostViewModel
 
@@ -22,16 +21,18 @@ class NewPostFragment : Fragment() {
         arguments?.textArg?.let {
             binding.editText.setText(it)
         }
+
+        val viewModel: PostViewModel by viewModels(ownerProducer = ::requireParentFragment)
+
         binding.editText.requestFocus()
 
-        val viewModel: PostViewModel by viewModels(::requireParentFragment)
-
         binding.checkButton.setOnClickListener {
-            if (!binding.editText.text.isNullOrBlank()){
-                val content = binding.editText.text.toString()
-                viewModel.changeContent(content)
+            val text = binding.editText.text.toString()
+
+            if (text.isNotBlank()) {
+                viewModel.changeContent(text)
                 viewModel.save()
-                requireView().hideKeyboard()
+
             }
             findNavController().navigateUp()
         }

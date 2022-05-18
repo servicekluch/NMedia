@@ -37,6 +37,9 @@ class PostViewHolder(
             video.setOnClickListener{
                 onInteractionListener.onVideoClicked(post)
             }
+            avatar.setOnClickListener{
+                onInteractionListener.onPostClicked(post)
+            }
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
