@@ -22,6 +22,9 @@ class PostRepositoryFileImpl(
         if (file.exists()) {
             context.openFileInput(filename).bufferedReader().use {
                 posts = gson.fromJson(it, type)
+                if (posts.isNotEmpty()){
+                    ids = posts.first().id
+                } else ids = 0L
                 data.value = posts
             }
         } else {

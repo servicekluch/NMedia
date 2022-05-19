@@ -18,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@id/check_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="LabelFor"/>
+        tools:ignore="LabelFor" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"

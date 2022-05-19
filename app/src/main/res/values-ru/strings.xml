@@ -8,4 +8,10 @@
     <string name="empty_post">пустой пост!</string>
     <string name="chooser_share_post">Поделиться</string>
     <string name="error_empty_content">Контент не может быть пустым</string>
+    <string name="save" translatable="false">сохранить</string>
+    <string name="edit" translatable="false">редактировать</string>
+    <string name="clear" translatable="false">очистить</string>
+    <string name="button_save" translatable="false">кнопка сохранить</string>
+    <string name="button_cancel" translatable="false">кнопка отмена</string>
+    <string name="button_edit" translatable="false">кнопка редактировать</string>
 </resources>
