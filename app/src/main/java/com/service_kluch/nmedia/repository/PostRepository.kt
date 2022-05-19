@@ -9,4 +9,6 @@ interface PostRepository {
     fun shareById(id: Long)
     fun removeById(id: Long)
     fun save(post: Post)
+    fun cancelEditing(post: Post)
+    fun isVideo (post: Post): Boolean
 }

@@ -85,7 +85,7 @@
         android:visibility="gone"
         android:clickable="true"
         android:focusable="true"
-        app:constraint_referenced_ids="video, playButton"/>
+        app:constraint_referenced_ids="video, play"/>
 
     <ImageView
         android:id="@+id/video"
@@ -99,7 +99,7 @@
         app:srcCompat="@drawable/ic_baseline_video"/>
 
     <ImageView
-        android:id="@+id/playButton"
+        android:id="@+id/play"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:contentDescription="@string/button_play"

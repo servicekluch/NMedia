@@ -3,26 +3,25 @@ package com.service_kluch.nmedia.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.service_kluch.nmedia.db.AppDbRoom
+import com.service_kluch.nmedia.db.AppDb
 import com.service_kluch.nmedia.dto.Post
 import com.service_kluch.nmedia.repository.PostRepository
-import com.service_kluch.nmedia.repository.PostRepositoryRoomImpl
+import com.service_kluch.nmedia.repository.PostRepositorySQLiteImpl
 
 private val empty = Post(
     id = 0,
     authorName = "",
     content = "",
     published = "",
-    likedByMe = false,
-    likedCount = 0,
-    viewedCount = 0,
-    videoUrl=""
+    likeByMe = false,
+    likeCount = 0,
+    watchesCount = 0
 )
 
 
 class PostViewModel(application: Application) : AndroidViewModel(application) {
-    private val repository : PostRepository = PostRepositoryRoomImpl(
-        AppDbRoom.getInstance(application).postDaoRoom()
+    private val repository: PostRepository = PostRepositorySQLiteImpl(
+        AppDb.getInstance(application).postDao
     )
     val liveData = repository.getAll()
 
@@ -56,5 +55,9 @@ class PostViewModel(application: Application) : AndroidViewModel(application) {
 
     fun edit (post: Post) {
         editedPost.value = post
+    }
+
+    fun getUri(post: Post): Boolean {
+        return repository.isVideo(post)
     }
 }
