@@ -34,12 +34,12 @@ class PostFragment : Fragment() {
                         authorName.text = post.authorName
                         data.text = post.published
                         content.text = post.content
-                        watchesImageViewId.text = post.watchesCount.toString()
-                        likeImageButtonId.text = post.likeCount.toString()
-                        shareImageButtonId.text = post.shareCount.toString()
-                        likeImageButtonId.isChecked = post.likeByMe
+                        watchesImageViewId.text = post.viewedCount.toString()
+                        likeImageButtonId.text = post.likedCount.toString()
+                        shareImageButtonId.text = post.sharedCount.toString()
+                        likeImageButtonId.isChecked = post.likedByMe
 
-                        if (post.video == null) {
+                        if (post.videoUrl == "") {
                             binding.postContent.videoGroup.visibility = View.GONE
                         }
 
@@ -79,7 +79,7 @@ class PostFragment : Fragment() {
                         }
 
                         video.setOnClickListener {
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.video)))
+                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.videoUrl)))
                         }
                     }
                 }
