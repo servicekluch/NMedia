@@ -65,9 +65,7 @@ class FeedFragment : Fragment() {
                 }
 
                 override fun onVideoClicked(post: Post) {
-                    if (viewModel.getUri(post)) {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.video)))
-                    }
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.videoUrl)))
                 }
                 override fun onPostClicked(post: Post) {
                     findNavController().navigate(R.id.action_feedFragment_to_postFragment,

@@ -21,7 +21,6 @@ class PostAdapter(
             onInteractionListener
         )
 
-
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bind(getItem(position))
     }

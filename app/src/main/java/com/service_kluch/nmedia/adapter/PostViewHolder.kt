@@ -13,7 +13,7 @@ class PostViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind (post: Post) {
-        if (!post.video.isNullOrEmpty()){
+        if (!post.videoUrl.isEmpty()){
             binding.videoGroup.visibility = Group.VISIBLE
         }
         with(binding) {
@@ -22,10 +22,10 @@ class PostViewHolder(
             data.text = post.published
             content.text = post.content
 
-            likeImageButtonId.isChecked = post.likeByMe
-            likeImageButtonId.text = post.likeCount.toFormattedString()
-            shareImageButtonId.text = post.shareCount.toFormattedString()
-            watchesImageViewId.text = post.watchesCount.toFormattedString()
+            likeImageButtonId.isChecked = post.likedByMe
+            likeImageButtonId.text = post.likedCount.toFormattedString()
+            shareImageButtonId.text = post.sharedCount.toFormattedString()
+            watchesImageViewId.text = post.viewedCount.toFormattedString()
 
             likeImageButtonId.setOnClickListener {
                 onInteractionListener.onLikeClicked(post)
