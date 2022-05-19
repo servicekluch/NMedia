@@ -75,6 +75,12 @@ class PostFragment : Fragment() {
                     }
 
                     shareImageButtonId.setOnClickListener {
+                        val intent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(Intent.EXTRA_TEXT, post.content)
+                            type = "text/plain"
+                        }
+                        startActivity(Intent.createChooser(intent, getString(R.string.chooser_share_post)))
                         viewModel.shareById(post.id)
                     }
 
