@@ -26,64 +26,64 @@ class PostFragment : Fragment() {
 
         val viewModel: PostViewModel by viewModels(::requireParentFragment)
 
-        with(binding.postContent) {
+        with (binding.postContent) {
             viewModel.liveData.observe(viewLifecycleOwner) { posts ->
                 val post = posts.find { it.id == arguments?.longArg }
                 if (post != null) {
 
-                        authorName.text = post.authorName
-                        data.text = post.published
-                        content.text = post.content
-                        watchesImageViewId.text = post.watchesCount.toString()
-                        likeImageButtonId.text = post.likeCount.toString()
-                        shareImageButtonId.text = post.shareCount.toString()
-                        likeImageButtonId.isChecked = post.likeByMe
+                    authorName.text = post.authorName
+                    data.text = post.published
+                    content.text = post.content
+                    watchesImageViewId.text = post.watchesCount.toString()
+                    likeImageButtonId.text = post.likeCount.toString()
+                    shareImageButtonId.text = post.shareCount.toString()
+                    likeImageButtonId.isChecked = post.likeByMe
 
-                        if (post.video == null) {
-                            binding.postContent.videoGroup.visibility = View.GONE
-                        }
+                    if (post.video == null) {
+                        binding.postContent.videoGroup.visibility = View.GONE
+                    }
 
-                        menu.setOnClickListener {
-                            PopupMenu(it.context, it).apply {
-                                inflate(R.menu.options_post)
-                                setOnMenuItemClickListener { item ->
-                                    when (item.itemId) {
-                                        R.id.edit -> {
-                                            viewModel.edit(post)
-                                            findNavController().navigate(
-                                                R.id.action_postFragment_to_newPostFragment,
-                                                Bundle().apply {
-                                                    textArg = post.content
-                                                }
-                                            )
-                                            true
-                                        }
-                                        R.id.remove -> {
-                                            findNavController().navigate(
-                                                R.id.action_postFragment_to_feedFragment
-                                            )
-                                            viewModel.removeById(post.id)
-                                            true
-                                        }
-                                        else -> false
+                    menu.setOnClickListener {
+                        PopupMenu(it.context, it).apply {
+                            inflate(R.menu.options_post)
+                            setOnMenuItemClickListener { item ->
+                                when (item.itemId) {
+                                    R.id.edit -> {
+                                        viewModel.edit(post)
+                                        findNavController().navigate(
+                                            R.id.action_postFragment_to_newPostFragment,
+                                            Bundle().apply {
+                                                textArg = post.content
+                                            }
+                                        )
+                                        true
                                     }
+                                    R.id.remove -> {
+                                        findNavController().navigate(
+                                            R.id.action_postFragment_to_feedFragment
+                                        )
+                                        viewModel.removeById(post.id)
+                                        true
+                                    }
+                                    else -> false
                                 }
-                            }.show()
-                        }
-                        likeImageButtonId.setOnClickListener {
-                            viewModel.likeById(post.id)
-                        }
+                            }
+                        }.show()
+                    }
+                    likeImageButtonId.setOnClickListener {
+                        viewModel.likeById(post.id)
+                    }
 
-                        shareImageButtonId.setOnClickListener {
-                            viewModel.shareById(post.id)
-                        }
+                    shareImageButtonId.setOnClickListener {
+                        viewModel.shareById(post.id)
+                    }
 
-                        video.setOnClickListener {
-                            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.video)))
-                        }
+                    video.setOnClickListener {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(post.video)))
                     }
                 }
             }
-    return binding.root
+        }
+        return binding.root
     }
 }
