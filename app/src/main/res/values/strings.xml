@@ -31,4 +31,9 @@
     <string name="button_play" translatable="false">button_play</string>
     <string name="button_check" translatable="false">button_check</string>
     <string name="fab" translatable="false">fab</string>
+    <string name="channel_name" translatable="false">channel_name</string>
+    <string name="channel_description" translatable="false">channel_description</string>
+    <string name="user_liked" translatable="false">"User %1$s liked %2$s's "</string>
+    <string name="new_post" translatable="false">User %1$s new post: %2$s</string>
+    <string name="unknown" translatable="false">Unknown message</string>
 </resources>
