@@ -22,7 +22,7 @@ abstract class AppDbRoom : RoomDatabase() {
         }
 
         private fun buildDatabase(context: Context) =
-            Room.databaseBuilder(context, AppDbRoom::class.java, "app.db")
+            Room.databaseBuilder(context, AppDbRoom::class.java, "appNMedia.db")
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build()

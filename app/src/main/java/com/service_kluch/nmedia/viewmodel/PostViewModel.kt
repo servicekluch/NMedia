@@ -13,10 +13,10 @@ private val empty = Post(
     authorName = "",
     content = "",
     published = "",
-    likedByMe = false,
-    likedCount = 0,
-    viewedCount = 0,
-    videoUrl=""
+    likeByMe = false,
+    likeCount = 0,
+    watchesCount = 0,
+    video=""
 )
 
 

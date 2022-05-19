@@ -23,8 +23,8 @@ interface PostDaoRoom {
     @Query(
         """
         UPDATE PostEntity SET
-        likedCount = likedCount + CASE WHEN likedByMe THEN -1 ELSE 1 END,
-        likedByMe = CASE WHEN likedByMe THEN 0 ELSE 1 END
+        likeCount = likeCount + CASE WHEN likeByMe THEN -1 ELSE 1 END,
+        likeByMe = CASE WHEN likeByMe THEN 0 ELSE 1 END
         WHERE id = :id
         """
     )
@@ -36,7 +36,7 @@ interface PostDaoRoom {
     @Query(
         """
         UPDATE PostEntity SET
-        sharedCount = sharedCount + 1
+        shareCount = shareCount + 1
         WHERE id = :id
         """
     )
