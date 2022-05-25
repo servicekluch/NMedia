@@ -47,7 +47,7 @@ dependencies {
     def gsonVersion = "2.9.0"
     def navVersion = "2.4.2"
     def roomVersion = "2.4.2"
-    def firebaseVersion = "29.3.0"
+    def firebaseVersion = '30.0.2'
     def playServicesBaseVersion = "18.0.1"
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -69,7 +69,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
     implementation platform("com.google.firebase:firebase-bom:$firebaseVersion")
-    implementation "com.google.firebase:firebase-messaging-ktx"
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.5'
     implementation "com.google.android.gms:play-services-base:$playServicesBaseVersion"
     implementation "androidx.cardview:cardview:1.0.0"
 }
